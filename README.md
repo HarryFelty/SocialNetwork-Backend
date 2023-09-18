@@ -23,6 +23,9 @@ Once the server is running, you can use a tool like Insomnia or Postman to inter
 
 Repo: https://github.com/HarryFelty/SocialNetwork-Backend
 
+![Untitled_ Sep 18, 2023 3_42 PM](https://github.com/HarryFelty/SocialNetwork-Backend/assets/125701349/dac816e2-47af-43ab-a661-468a66261840)
+
+
 ## API Routes
 ### Users
 GET /api/users: Get a list of all users.
