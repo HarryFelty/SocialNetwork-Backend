@@ -39,7 +39,7 @@ module.exports = {
   //update user
   async updateUser(req, res) {
     try {
-      const user = await User.findOne({ _id: req.params.userId },
+      const user = await User.findOneAndUpdate({ _id: req.params.userId },
         {
           username: req.body.username,
           email: req.body.email
@@ -48,7 +48,7 @@ module.exports = {
       if (!user) {
         return res.status(404).json({ message: 'No user with that ID' });
       }
-      res.json(user);
+      res.status(200).json({ message: 'User updated.' });
     } catch (err) {
       res.status(500).json(err);
     }
@@ -61,7 +61,7 @@ module.exports = {
       if (!user) {
         return res.status(404).json({ message: 'No user with that ID' });
       }
-      res.json(user);
+      res.status(200).json({ message: 'User deleted.' });
     } catch (err) {
       res.status(500).json(err);
     }
@@ -77,7 +77,7 @@ module.exports = {
       if (!user) {
         return res.status(404).json({ message: 'No user with that ID' });
       }
-      res.json(user);
+      res.status(200).json({ message: 'Friend added!' });
     } catch (err) {
       res.status(500).json(err);
     }
@@ -93,7 +93,7 @@ module.exports = {
       if (!user) {
         return res.status(404).json({ message: 'No user with that ID' });
       }
-      res.json(user);
+      res.status(200).json({ message: 'Friend removed.' });
     } catch (err) {
       res.status(500).json(err);
     }
